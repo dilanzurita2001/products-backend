@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres-sq15
+    environment:
+      POSTGRES_USER: sq15
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: curso_sq15
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
